@@ -1,0 +1,34 @@
+
+
+[project]
+
+name = "aws-execution-platform"
+
+version = "1.0.0"
+
+requires-python = ">=3.12"
+
+dependencies = [
+
+  "boto3>=1.40",
+
+]
+
+
+[project.entry-points."aws.plugins"]
+
+glue = "plugins.aws_glue.plugin:GluePlugin"
+step_function = "plugins.aws_step_function.plugin:StepFunctionPlugin"
+
+[project.optional-dependencies]
+
+dev = ["pytest","pytest-asyncio","mypy","ruff"]
+
+[tool.mypy]
+
+strict = true
+
+[tool.ruff]
+
+line-length = 100
+
